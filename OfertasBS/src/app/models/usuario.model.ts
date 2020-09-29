@@ -4,4 +4,5 @@ export class UsuarioModel{
     name: string;
     rol: number;
     password: string;
+    displayName:String;
 }

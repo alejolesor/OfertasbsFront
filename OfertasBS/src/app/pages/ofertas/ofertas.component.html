@@ -1,0 +1,123 @@
+<h1>Registro Ofertas</h1>
+
+<hr>
+
+<div class="row text-right ">
+  <div class="col">
+    <button class="btn btn-danger"
+            routerLink="/cotizaciones">
+      <i class="fa fa-arrow-left"></i>
+      Regresar
+    </button>
+  </div>
+</div>
+
+<hr>
+
+
+<div class="row animated fadeIn faster">
+  <div class="col">
+
+    <form [formGroup]="formOferta" (ngSubmit)="ofertar()">
+
+      <div class="form-group row">
+        <label class="col-2 col-form-label">Cotizacion</label>
+          <div class="col">
+            <input class="form-control"
+                   name="idcotizacion" 
+                   type="text" 
+                   placeholder="Id Cotizacion"
+                   formControlName="idcotizacion"
+                   disabled=true>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-2 col-form-label">item </label>
+            <div class="col">
+              <input class="form-control"
+                     name="item" 
+                     type="text" 
+                     placeholder="item Cotizacion"
+                     formControlName="itemcotizacion"
+                     disabled=true>
+            </div>
+          </div>
+
+     <div class="form-group row">
+      <label class="col-2 col-form-label">Producto</label>
+        <div class="col">
+          <input class="form-control"
+                 name="producto" 
+                 type="text" 
+                 placeholder="Producto"
+                 formControlName="Name"
+                 disabled=true>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-2 col-form-label">Precio U</label>
+        <div class="col">
+          <input class="form-control"
+                 name="precio"
+                 type="number" 
+                 placeholder="Precio $$"
+                 formControlName="Price">
+        </div>
+      </div>
+
+
+      <div class="form-group row">
+        <label class="col-2 col-form-label">Descuento</label>
+        <div class="col">
+          <input class="form-control"
+                 name="descuento"
+                 type="number" 
+                 placeholder="Descuento $$"
+                 formControlName="descuento">
+        </div>
+      </div>
+
+
+
+      <div class="form-group row" >
+        <label class="col-2 col-form-label">Costos </label>
+        <div class="form-row col">
+    
+          <div class="col">
+            <input class="form-control"
+            name="cantidad"
+            type="number" 
+            placeholder="Cantidad"
+            formControlName="Stock"
+            >
+          </div>
+    
+          <div class="col">
+            <input class="form-control" 
+                type="text" 
+                placeholder="Total $" 
+                formControlName="total">
+          </div>
+    
+    
+        </div>
+      </div>
+
+
+
+
+      <div class="form-group row">
+        <label class="col-2 col-form-label">&nbsp;</label>
+        <div class="input-group col">
+          <button type="submit" class="btn btn-outline-primary btn-block">
+            Enviar Oferta
+          </button>
+        </div>
+      </div>
+
+    </form>
+
+  </div>
+</div>

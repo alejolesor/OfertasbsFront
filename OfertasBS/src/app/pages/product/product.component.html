@@ -1,0 +1,32 @@
+<div *ngIf="product" 
+    class="container main-container animated fadeIn fast">
+
+  <h1>Producto</h1>
+  <hr>
+
+  <div class="row">
+
+    
+    <div class="col-md-5">
+      <img [src]="product[0].thumbnail|imagenes" alt=""
+            class="img-thumbnail img-fluid">
+
+
+    </div>
+
+    <div class="col-md-7">
+      <h1>{{product[0].name}}</h1>
+      <hr>
+      <p class="text-justify">
+        {{product[0].description}}
+      </p>
+
+    </div>
+
+
+  </div>
+
+
+
+  
+</div>

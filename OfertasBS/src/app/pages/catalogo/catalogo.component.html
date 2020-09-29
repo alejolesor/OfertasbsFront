@@ -1,0 +1,47 @@
+<h1>Catalogo</h1>
+
+<hr>
+
+<div class="row">
+  <div class="col">
+    <button routerLink="/registrocat/1" 
+           class="btn btn-primary">
+      <i class="fa fa-plus"></i>
+      Agregar
+    </button>
+  </div>
+</div>
+
+<hr>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">IdProducto</th>
+      <th scope="col">Producto o Servicio</th>
+      <th scope="col">Categoria</th>
+      <th scope="col">Proveedor</th>
+      <th scope="col">stock</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Cotizar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of productsSer; let i = index">
+      <th scope="row">{{i + 1}}</th>
+      <td>{{ item.Id}}</td>
+      <td>{{ item.Name}}</td>
+      <td>{{ item.Category }}</td>
+      <td>{{ item.Catalogue }}</td>
+      <td>{{ item.Stock }}</td>
+      <td>{{ item.Price }}</td>
+      <td>
+        <button class="btn btn-info mr-1"
+                [routerLink]="['/cotizaciones', item.Id ]">
+          <i class="fa fa-calculator"></i>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+

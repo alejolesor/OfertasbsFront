@@ -38,11 +38,14 @@ export class RegistroComponent implements OnInit {
       email: ['',[ Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$') ] ],
       name: ['', Validators.required ],
       rol: ['', Validators.required],
-      password: ['', Validators.required ]
+      password: ['', Validators.required ],
+      displayName: ['idDB']
     });
    }
 
    saveUser(){
+
+    console.log(this.formUser.value)
 
     Swal.fire('Cargando', 'Espere por favor ...', 'info');
     Swal.showLoading();

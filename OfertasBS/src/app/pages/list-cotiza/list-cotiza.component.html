@@ -1,0 +1,46 @@
+<h1>Lista de Cotizaciones</h1>
+
+<hr>
+
+<div class="row text-right ">
+  <div class="col">
+    <button class="btn btn-danger"
+            routerLink="/home">
+      <i class="fa fa-arrow-left"></i>
+      Regresar
+    </button>
+  </div>
+</div>
+
+<hr>
+<table class="table" >
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Item Cotizacion</th>
+      <th scope="col">Id Cotizacion</th>
+      <th scope="col">Producto</th>
+      <th scope="col">Cantidad</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Ofertar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of cotizaciones; let i = index" >
+      <th scope="row">{{i + 1}}</th>
+      <td>{{ item.id_item_cotizacion}}</td>
+      <td>{{ item.id_cotizacion}}</td>
+      <td>{{ item.id_item_catalogo }}</td>
+      <td>{{ item.item_cotizacion_cantidad }}</td>
+      <td>{{ item.item_cotizacion_precio }}</td>
+
+      <td>
+        <button class="btn btn-info mr-1"
+            [routerLink]="['/ofertas', item.id_item_cotizacion ]">
+            <i class="fa fa-calculator"></i>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+

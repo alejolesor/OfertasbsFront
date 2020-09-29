@@ -10,23 +10,44 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { from } from 'rxjs';
+import { CatalogoComponent } from './pages/catalogo/catalogo.component';
+import { RegistroCatalogoComponent } from './pages/registro-catalogo/registro-catalogo.component';
+import { CotizacionesComponent } from './pages/cotizaciones/cotizaciones.component';
+import { ListCotizaComponent } from './pages/list-cotiza/list-cotiza.component';
+import { OfertasComponent } from './pages/ofertas/ofertas.component';
+import { EstadisticasComponent } from './pages/estadisticas/estadisticas.component';
+import { ProductsComponent } from './pages/products/products.component';
+
+//pipes
+import { ImagenesPipe } from './pipes/imagenes.pipe';
+import { ProductComponent } from './pages/product/product.component';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistroComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    CatalogoComponent,
+    RegistroCatalogoComponent,
+    CotizacionesComponent,
+    ListCotizaComponent,
+    OfertasComponent,
+    EstadisticasComponent,
+    ProductsComponent,
+    ImagenesPipe,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
     
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

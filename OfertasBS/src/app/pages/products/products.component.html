@@ -1,0 +1,24 @@
+<h1>Planes</h1>
+
+<hr>
+
+<div class="row">
+  <div class="card-columns">
+
+      <div class="card" *ngFor="let item of productsplanes">
+        <img [src]="item.thumbnail|imagenes" class="card-img-top" [alt]="item.name">
+        <div class="card-body">
+          <h5 class="card-title">{{item.name}}</h5>
+          <p class="card-text" text-justify>{{item.description | slice:0:100}}</p>
+        </div>
+        <div class="card-footer">
+          <button type="button" class="btn btn-outline-primary"
+            [routerLink]="['/product',item.id]">
+            Detalles
+          </button>
+        </div>
+      </div>
+
+  </div>
+</div>
+
