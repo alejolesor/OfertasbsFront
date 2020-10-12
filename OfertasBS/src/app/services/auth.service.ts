@@ -106,12 +106,9 @@ export class AuthService {
 
   rolCurrent():string{
 
-    console.log("can guard +" + this.rol)
-
     return this.rol;
 
   }
-
 
   estaAutenticado() : boolean {
    

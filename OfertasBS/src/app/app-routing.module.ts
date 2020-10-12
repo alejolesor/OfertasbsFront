@@ -21,8 +21,8 @@ const routes: Routes = [
   { path: 'registro', component: RegistroComponent },
   { path: 'login'   , component: LoginComponent },
   { path: 'estadisticas', component: EstadisticasComponent,canActivate: [ AuthGuard ], data:{id:1}  },
-  { path: 'products', component: ProductsComponent,canActivate: [ AuthGuard ], data:{id:3}  },
-  { path: 'product/:id', component: ProductComponent,data:{id:5}  },
+  { path: 'products', component: ProductsComponent,canActivate: [ AuthGuard ], data:{id:2}  },
+  { path: 'product/:id', component: ProductComponent,data:{id:3}  },
   { path: '**', redirectTo: '/home' }
 ];
 
