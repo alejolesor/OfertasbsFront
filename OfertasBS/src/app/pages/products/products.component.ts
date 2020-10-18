@@ -10,16 +10,24 @@ import { catalogoModel } from 'src/app/models/catalogo.model';
 export class ProductsComponent implements OnInit {
 
   productsplanes: any[] = [];
+  products: any[] = [];
 
   constructor( private auth: AuthService ) { }
   
 
   ngOnInit() {
 
+    this.auth.getproductsPlanes().subscribe( res => {
+
+      this.products = res
+      console.log(this.products)
+
+    })
+
     this.auth.getproductsTour().subscribe( res => {
       
       this.productsplanes = res
-      console.log(this.productsplanes);
+      //console.log(this.productsplanes);
 
   });
 

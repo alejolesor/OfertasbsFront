@@ -268,6 +268,34 @@ export class AuthService {
     }
 
 
+    getproductsPlanes(): Observable<any>{
+      return this.http.get<any>(
+        `${ this.url }/Products/products`
+      ). 
+      pipe( map((data:any)=>
+     
+      data)
+      )
+    }
+
+    getproductxId(id: number): Observable<any>{
+      return this.http.get<any>(
+        `${ this.url }/Products/getProdcutxId?idproduct=${ id }`
+      ). 
+      pipe( map((data:any)=> data)
+      )
+    }
+
+    getProductosPlaene(){
+      return this.http.get<any>(
+        `${ this.url }/Products/products`
+      ). 
+      pipe( map((data:any)=>
+     
+      data)
+      )
+    }
+  
 
 
   }

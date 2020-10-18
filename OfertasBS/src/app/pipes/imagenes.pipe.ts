@@ -9,10 +9,10 @@ export class ImagenesPipe implements PipeTransform {
 
     console.log(thumbnail)
 
-    let url = thumbnail.path
-    let ext = thumbnail.extension
+    let url = "http://10.39.1.164:9093/api/Image/"
+    
 
-    return url  + "." + ext;
+    return url  + thumbnail;
   }
 
 }

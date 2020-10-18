@@ -8,17 +8,15 @@
 
     
     <div class="col-md-5">
-      <img [src]="product[0].thumbnail|imagenes" alt=""
-            class="img-thumbnail img-fluid">
-
-
+      <img [src]="product.imageId|imagenes" class="card-img-top" alt=""
+            >
     </div>
 
     <div class="col-md-7">
-      <h1>{{product[0].name}}</h1>
+      <h1>{{product.name}}</h1>
       <hr>
       <p class="text-justify">
-        {{product[0].description}}
+        {{product.description}}
       </p>
 
     </div>

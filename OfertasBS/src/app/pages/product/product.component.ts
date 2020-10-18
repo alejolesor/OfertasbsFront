@@ -10,12 +10,13 @@ import { AuthService } from 'src/app/services/auth.service';
 export class ProductComponent implements OnInit {
 
   product: any;
+  productPlane: any;
 
   constructor( private auth: AuthService, private route: ActivatedRoute) {
     this.route.params.subscribe( parametros => {
 
       console.log(parametros)
-      this.getProductxid(parametros.id)
+      this.getProductId(parametros.id)
 
     });
    }
@@ -30,6 +31,19 @@ export class ProductComponent implements OnInit {
 
     this.auth.getproductsTourxId(id).subscribe( res => {
       
+      this.productPlane = res
+      console.log(this.productPlane);
+
+  });
+
+
+  }
+
+
+  getProductId(id: number){
+
+    this.auth.getproductxId(id).subscribe( res => {
+      
       this.product = res
       console.log(this.product);
 
@@ -37,5 +51,6 @@ export class ProductComponent implements OnInit {
 
 
   }
+
 
 }

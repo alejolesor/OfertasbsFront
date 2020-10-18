@@ -1,0 +1,153 @@
+
+<hr>
+
+<h1>Registro de Productos</h1>
+
+<hr>
+
+<div class="row text-right ">
+  <div class="col">
+    <button class="btn btn-danger"
+            routerLink="/catalogo">
+      <i class="fa fa-arrow-left"></i>
+      Regresar
+    </button>
+  </div>
+</div>
+
+<hr>
+
+<div class="row animated fadeIn faster">
+  <div class="col">
+
+    <form [formGroup]="formRegistro" (ngSubmit)="save()">
+
+      <div class="form-group row">
+      <label class="col-2 col-form-label">Producto</label>
+        <div class="col">
+          <input class="form-control"
+                 name="producto" 
+                 type="text" 
+                 placeholder="Producto"
+                 formControlName="Producto"
+                 >
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-2 col-form-label">Origen</label>
+        <div class="col">
+          <input class="form-control"
+                 name="origen"
+                 type="text" 
+                 placeholder="Origen"
+                 formControlName="Origen" 
+                 >
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-2 col-form-label">Destino</label>
+        <div class="col">
+          <input class="form-control"
+                 name="destino"
+                 type="text" 
+                 placeholder="Destino" 
+                 formControlName="Destino"   
+                 >
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-2 col-form-label">Transporte</label>
+        <div class="col">
+        <select formControlName="Transporte" class="form-control" id="rolId">
+            <option value="A">Aereo</option>
+            <option value="T">Terrestre</option>6
+          </select>
+       
+        </div>
+      </div>
+
+
+      <div class="form-group row">
+        <label class="col-2 col-form-label">Precio</label>
+        <div class="col">
+          <input class="form-control"
+                 name="precio"
+                 type="number" 
+                 placeholder="Precio $$"
+                 formControlName="Precio"  
+                 >
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-2 col-form-label">Fecha del evento</label>
+        <div class="col">
+          <input class="form-control"
+                 name="fechaEvento"
+                 type="date" 
+                 placeholder="fechaEvento"
+                 formControlName="FechaEvento" 
+                 >
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-2 col-form-label">Numero de Personas</label>
+        <div class="col">
+          <input class="form-control"
+                 name="numeroPersonas"
+                 type="number" 
+                 placeholder="Numero de Personas"
+                 formControlName="PeopleNumber"  
+                 >
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-2 col-form-label">Seleccionar Archivo</label>
+        <div class="col">
+          
+          <input type="file" 
+                 class="form-control" 
+                 name="imagen" 
+                 lang="es"
+                 formControlName="Imagen" 
+                 >
+        </div>
+      </div>
+
+
+
+      <div class="form-group row">
+        <label class="col-2 col-form-label">Descripcion</label>
+        <div class="col">
+          <textarea 
+          class="form-control" 
+          rows="3"
+          name="description"
+          placeholder="Descripcion"
+          formControlName="Description" 
+          >
+        </textarea>
+        </div>
+      </div>
+
+
+      <div class="form-group row">
+        <label class="col-2 col-form-label">&nbsp;</label>
+        <div class="input-group col">
+          <button type="submit" class="btn btn-outline-primary btn-block">
+            Guardar
+          </button>
+        </div>
+      </div>
+
+    </form>
+
+
+
+  </div>
+</div>

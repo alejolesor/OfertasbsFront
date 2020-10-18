@@ -14,6 +14,8 @@ import { EstadisticasComponent } from './pages/estadisticas/estadisticas.compone
 import { ProductsComponent } from './pages/products/products.component';
 import { ProductComponent } from './pages/product/product.component';
 import { AuthcanGuard } from './guards/authcan.guard';
+import { ProductOmsComponent } from './pages/product-oms/product-oms.component';
+import { RegistroProductsComponent } from './pages/registro-products/registro-products.component';
 
 
 const routes: Routes = [
@@ -23,6 +25,8 @@ const routes: Routes = [
   { path: 'estadisticas', component: EstadisticasComponent,canActivate: [ AuthGuard ], data:{id:1}  },
   { path: 'products', component: ProductsComponent,canActivate: [ AuthGuard ], data:{id:2}  },
   { path: 'product/:id', component: ProductComponent,data:{id:3}  },
+  { path: 'productsoms', component: ProductOmsComponent,canActivate: [ AuthGuard ], data:{id:4}  },
+  { path: 'productRegistro', component: RegistroProductsComponent,canActivate: [ AuthGuard ], data:{id:5}  },
   { path: '**', redirectTo: '/home' }
 ];
 
