@@ -27,17 +27,17 @@ export class ProductComponent implements OnInit {
 
 
 
-  getProductxid(id: number){
+  // getProductxid(id: number){
 
-    this.auth.getproductsTourxId(id).subscribe( res => {
+  //   this.auth.getproductsTourxId(id).subscribe( res => {
       
-      this.productPlane = res
-      console.log(this.productPlane);
+  //     this.productPlane = res
+  //     console.log(this.productPlane);
 
-  });
+  // });
 
 
-  }
+  // }
 
 
   getProductId(id: number){

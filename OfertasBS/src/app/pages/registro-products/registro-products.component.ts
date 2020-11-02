@@ -13,46 +13,60 @@ export class RegistroProductsComponent implements OnInit {
 
   formRegistro: FormGroup;
 
+  imagen: any;
+
   constructor(private fb: FormBuilder, private service: TouresServicesService) {
     this.crearFormulario();
-   }
+  }
 
   ngOnInit() {
-    
+
   }
 
 
-  crearFormulario(){
+  crearFormulario() {
 
     this.formRegistro = this.fb.group({
-      Producto: [''],
-      Destino: [''],
-      Precio: [''],
-      FechaEvento: [''],
-      Description:[''],
-      Imagen:[''],
-      Origen:[''],
-      Transporte:[''],
-      PeopleNumber:['']
+      Name: [''],
+      DestinationCity: [''],
+      Amount: [''],
+      EventDate: [''],
+      Description: [''],
+      OriginCity: [''],
+      TransportType: [''],
+      PeopleNumber: ['']
     });
 
   }
 
+  loadFile(files: File[]) {
 
-  save(){
+    if (files.length == 0) {
+      return
+    }
+    this.imagen = files[0]
+  }
 
-            console.log(this.formRegistro);
+  save() {
 
-            this.service.registerProduct(this.formRegistro.value)
-            .subscribe( resp => {
-              Swal.fire('Almacenado', 'Producto Guardado Correctamete', 'info');
-              console.log(resp)
-            }, (err) => {   
-              Swal.fire('Error al Guardar', "Error", 'error');
-              console.log(err)
-            });
+    console.log(this.formRegistro)
+    let form = this.formRegistro.value
 
-      }
+    if (this.imagen != null) {
+
+      form.File = this.imagen
+
+      this.service.registerProduct(form)
+        .subscribe(resp => {
+          Swal.fire('Almacenado', 'Producto Guardado Correctamete', 'info');
+          console.log(resp)
+        }, (err) => {
+          Swal.fire('Error al Guardar', "Error", 'error');
+          console.log(err)
+        });
+    }
+
+  }
 
 
 

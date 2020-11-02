@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { UsuarioModel } from '../models/usuario.model';
 import { catalogoModel, productModel } from '../models/catalogo.model';
 import { cotizacionModel, cotizaListModel, oferta } from '../models/cotizacion.model';
@@ -27,8 +27,24 @@ export class TouresServicesService {
       ...product
     };
 
+    console.log(ProductData)
+
+
+    const formData = new FormData();
+    formData.append('File', ProductData.File)
+    formData.append('Name',ProductData.Name)
+    formData.append('Description',ProductData.Description)
+    formData.append('EventDate',ProductData.EventDate)
+    formData.append('DestinationCity',ProductData.DestinationCity)
+    formData.append('TransportType',ProductData.TransportType)  
+    formData.append('Amount',ProductData.Amount.toString())  
+    formData.append('PeopleNumber',ProductData.PeopleNumber.toString())  
+    formData.append('OriginCity',ProductData.OriginCity)
+   
+
+
     return this.http.post(
-      `${ this.url }/Products/createProduct` , ProductData
+      `${ this.url }/Products/createProduct` , formData
     ). 
     pipe(
       map( resp => {
@@ -36,9 +52,6 @@ export class TouresServicesService {
       })
     );
   }
-
-
-
 
 
 }

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { UsuarioModel } from '../models/usuario.model';
-import { catalogoModel } from '../models/catalogo.model';
+import { catalogoModel,productModel } from '../models/catalogo.model';
 import { cotizacionModel, cotizaListModel, oferta } from '../models/cotizacion.model';
 import { map } from 'rxjs/operators';
 import { Key } from 'protractor';
@@ -295,6 +295,47 @@ export class AuthService {
       data)
       )
     }
+
+    deleteProduct(id: number){
+
+      return this.http.delete(
+        `${ this.url }/Products/deleteProduct/?productId=${ id }`)
+  
+    }
+
+
+    updateProduct( product: productModel) {
+
+      const ProductData = {
+        ...product
+      };
+  
+      console.log(ProductData)
+  
+  
+      const formData = new FormData();
+      formData.append('File', ProductData.File)
+      formData.append('Name',ProductData.Name)
+      formData.append('Description',ProductData.Description)
+      formData.append('EventDate',ProductData.EventDate)
+      formData.append('DestinationCity',ProductData.DestinationCity)
+      formData.append('TransportType',ProductData.TransportType)  
+      formData.append('Amount',ProductData.Amount.toString())  
+      formData.append('PeopleNumber',ProductData.PeopleNumber.toString())  
+      formData.append('OriginCity',ProductData.OriginCity)
+      formData.append('Id',product.Id.toString())
+      formData.append('ImageId',product.ImageId)
+     
+      return this.http.put(
+        `${ this.url }/Products/updateProduct` , formData
+      ). 
+      pipe(
+        map( resp => {
+          console.log(resp);
+        })
+      );
+    }
+  
   
 
 

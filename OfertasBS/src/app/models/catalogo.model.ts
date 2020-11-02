@@ -10,14 +10,16 @@ export class catalogoModel{
 
 
 export class productModel{
+    Id:number;
     Name: string;
     Amount: number;
     DestinationCity: string;
-    EventDate:Date;
-    FileImage: ImageData;
+    EventDate:string;
+    File: File;
     Description:string;
     OriginCity:string;
     PeopleNumber:number;
     TransportType:string;
+    ImageId:string;
 
 }

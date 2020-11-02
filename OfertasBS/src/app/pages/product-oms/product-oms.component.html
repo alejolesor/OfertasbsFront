@@ -1,16 +1,32 @@
+<hr>
 <h1>Gestion de Productos</h1>
 
 <hr>
 
-<div class="row">
+<div class="row text-right ">
   <div class="col">
-    <button routerLink="/productRegistro" 
-           class="btn btn-primary">
-      <i class="fa fa-plus"></i>
-      Agregar
+    <button class="btn btn-danger"
+            routerLink="/home">
+      <i class="fa fa-arrow-left"></i>
+      Regresar
     </button>
   </div>
 </div>
+
+
+  <div class="row">
+    <div class="col">
+      <button routerLink="/productRegistro" 
+             class="btn btn-primary">
+        <i class="fa fa-plus"></i>
+        Agregar
+      </button>
+    </div>
+  </div>
+
+
+
+
 
 <hr>
 <table class="table table-striped">
@@ -23,7 +39,8 @@
       <th scope="col">Precio</th>
       <th scope="col">Fecha del evento</th>
       <th scope="col">Descripcion</th>
-      <th scope="col">Cotizar</th>
+      <th scope="col">Editar</th>
+      <th scope="col">Eliminar</th>
     </tr>
   </thead>
   <tbody>
@@ -37,8 +54,15 @@
       <td>{{ item.description }}</td>
       <td>
         <button class="btn btn-info mr-1"
-                [routerLink]="['/cotizaciones', item.Id ]">
+          [routerLink]="['/productEdit',item.id]">
           <i class="fa fa-pencil"></i>
+        </button>
+      </td>
+      <td>
+        <button class="btn btn-danger"
+                (click)="deleteProduct(item,i)"
+                >
+          <i class="fa fa-trash-o"></i>
         </button>
       </td>
     </tr>

@@ -16,6 +16,7 @@ import { ProductComponent } from './pages/product/product.component';
 import { AuthcanGuard } from './guards/authcan.guard';
 import { ProductOmsComponent } from './pages/product-oms/product-oms.component';
 import { RegistroProductsComponent } from './pages/registro-products/registro-products.component';
+import { EditProductComponent } from './pages/edit-product/edit-product.component';
 
 
 const routes: Routes = [
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path: 'product/:id', component: ProductComponent,data:{id:3}  },
   { path: 'productsoms', component: ProductOmsComponent,canActivate: [ AuthGuard ], data:{id:4}  },
   { path: 'productRegistro', component: RegistroProductsComponent,canActivate: [ AuthGuard ], data:{id:5}  },
+  { path: 'productEdit/:id', component: EditProductComponent,canActivate: [ AuthGuard ], data:{id:5}  },
   { path: '**', redirectTo: '/home' }
 ];
 

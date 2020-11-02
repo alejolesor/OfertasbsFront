@@ -24,6 +24,7 @@ import { ProductComponent } from './pages/product/product.component';
 import { AuthService } from './services/auth.service';
 import { ProductOmsComponent } from './pages/product-oms/product-oms.component';
 import { RegistroProductsComponent } from './pages/registro-products/registro-products.component';
+import { EditProductComponent } from './pages/edit-product/edit-product.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { RegistroProductsComponent } from './pages/registro-products/registro-pr
     ImagenesPipe,
     ProductComponent,
     ProductOmsComponent,
-    RegistroProductsComponent
+    RegistroProductsComponent,
+    EditProductComponent
   ],
   imports: [
     BrowserModule,
