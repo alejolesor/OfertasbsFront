@@ -23,3 +23,9 @@ export class productModel{
     ImageId:string;
 
 }
+
+export class productCart{
+    Id:number;
+    Titulo:string;
+    Amount:number;
+}

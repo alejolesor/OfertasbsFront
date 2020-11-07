@@ -25,6 +25,7 @@ import { AuthService } from './services/auth.service';
 import { ProductOmsComponent } from './pages/product-oms/product-oms.component';
 import { RegistroProductsComponent } from './pages/registro-products/registro-products.component';
 import { EditProductComponent } from './pages/edit-product/edit-product.component';
+import { CartShopComponent } from './pages/cart-shop/cart-shop.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { EditProductComponent } from './pages/edit-product/edit-product.componen
     ProductComponent,
     ProductOmsComponent,
     RegistroProductsComponent,
-    EditProductComponent
+    EditProductComponent,
+    CartShopComponent
   ],
   imports: [
     BrowserModule,
