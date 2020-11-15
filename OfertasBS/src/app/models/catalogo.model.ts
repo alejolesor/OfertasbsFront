@@ -28,4 +28,5 @@ export class productCart{
     Id:number;
     Titulo:string;
     Amount:number;
+    Cantidad:number;
 }

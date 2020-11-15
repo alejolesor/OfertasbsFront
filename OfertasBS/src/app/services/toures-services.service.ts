@@ -6,6 +6,7 @@ import { cotizacionModel, cotizaListModel, oferta } from '../models/cotizacion.m
 import { map } from 'rxjs/operators';
 import { Key } from 'protractor';
 import { Observable } from 'rxjs';
+import { Order, OrderProducts } from '../models/orders.model';
 
 @Injectable({
   providedIn: 'root'
@@ -45,6 +46,42 @@ export class TouresServicesService {
 
     return this.http.post(
       `${ this.url }/Products/createProduct` , formData
+    ). 
+    pipe(
+      map( resp => {
+        console.log(resp);
+      })
+    );
+  }
+
+
+  createOrder( order: any, total: number) {
+
+    var products: OrderProducts[] = [];
+
+    var orderProd = new Order();
+    orderProd.IdCliente = 7
+    orderProd.Estado = "En proceso"
+    orderProd.Fecha = "2020-10-16"
+    orderProd.Total = total
+    
+
+    order.forEach(element => {
+
+      products.push({IdOrden:0,Cantidad:0,idProducto:element.Id,Descripcion:element.Titulo,Precio:element.Amount})
+        
+      
+    });
+
+    orderProd.OrderProducts = products;
+
+
+    const OrderData = {
+      ...orderProd
+    };
+
+    return this.http.post(
+      `${ this.url }/Orders/createOrden` , OrderData
     ). 
     pipe(
       map( resp => {
