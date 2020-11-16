@@ -79,27 +79,36 @@
         {{product.description}}
       </p>
 
+ 
+      <label >
+        <b>Tipo de transporte</b>
+      </label>
+      <p class="text-justify">
+        {{product.transportType}}
+      </p>
+
       <br>
-      <div style="margin-top: 174px;">
+      <div style="margin-top: 117px;">
         <label >
           <b>Precio</b>
         </label>
         <h3>{{product.amount | currency}}</h3>
 
                  
-        <div class="row text-right ">
-          <div class="col">
-            <button class="btn btn-primary"
-                   
-                    (click)="addItemCart(product)">
-          
-              Agregar al Carrito
-            </button>
-          </div>
-        </div>
+
   
       </div>
 
+      <div class="row text-right ">
+        <div class="col">
+          <button class="btn btn-primary"
+                 
+                  (click)="addItemCart(product)">
+        
+            Agregar al Carrito
+          </button>
+        </div>
+      </div>
 
     
 

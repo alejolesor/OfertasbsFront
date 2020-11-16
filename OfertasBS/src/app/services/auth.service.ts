@@ -227,8 +227,6 @@ export class AuthService {
   }
 
 
-
-
     private crearArreglo( products: object ){
 
       const producServ: catalogoModel[] = [];
@@ -317,7 +315,7 @@ export class AuthService {
       formData.append('File', ProductData.File)
       formData.append('Name',ProductData.Name)
       formData.append('Description',ProductData.Description)
-      formData.append('EventDate',ProductData.EventDate)
+      formData.append('EventDateString',ProductData.EventDate)
       formData.append('DestinationCity',ProductData.DestinationCity)
       formData.append('TransportType',ProductData.TransportType)  
       formData.append('Amount',ProductData.Amount.toString())  

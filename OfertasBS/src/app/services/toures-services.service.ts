@@ -35,7 +35,7 @@ export class TouresServicesService {
     formData.append('File', ProductData.File)
     formData.append('Name',ProductData.Name)
     formData.append('Description',ProductData.Description)
-    formData.append('EventDate',ProductData.EventDate)
+    formData.append('EventDateString',ProductData.EventDate)
     formData.append('DestinationCity',ProductData.DestinationCity)
     formData.append('TransportType',ProductData.TransportType)  
     formData.append('Amount',ProductData.Amount.toString())  
@@ -58,6 +58,7 @@ export class TouresServicesService {
   createOrder( order: any, total: number) {
 
     var products: OrderProducts[] = [];
+    
 
     var orderProd = new Order();
     orderProd.IdCliente = 7
@@ -65,10 +66,17 @@ export class TouresServicesService {
     orderProd.Fecha = "2020-10-16"
     orderProd.Total = total
     
+ 
 
     order.forEach(element => {
+      var cantidad = 1;
 
-      products.push({IdOrden:0,Cantidad:0,idProducto:element.Id,Descripcion:element.Titulo,Precio:element.Amount})
+      if (element.Cantidad != undefined) {
+        cantidad = element.Cantidad
+      
+      }
+
+      products.push({IdOrden:0,Cantidad:Number(cantidad),idProducto:element.Id,Descripcion:element.Titulo,Precio:element.Amount})
         
       
     });

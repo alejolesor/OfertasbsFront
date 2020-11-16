@@ -81,6 +81,14 @@ export class ProductComponent implements OnInit {
     this.auth.getproductxId(id).subscribe( res => {
       
       this.product = res
+
+      console.log(this.product.transportType)
+      if (this.product.transportType == "A") {
+        this.product.transportType = "Aereo"
+      }else{
+        this.product.transportType = "Terrestre"
+      }
+      
       
 
   });
