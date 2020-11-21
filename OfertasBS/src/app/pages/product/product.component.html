@@ -94,9 +94,6 @@
         </label>
         <h3>{{product.amount | currency}}</h3>
 
-                 
-
-  
       </div>
 
       <div class="row text-right ">
@@ -117,7 +114,82 @@
 
   </div>
 
+</div>
 
+<hr>
+<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+  <i class="fa fa-bed" aria-hidden="true"></i>
+  Hoteles
+
+</button>
+<table class="table table-striped" >
+  <div  id="collapseOne" class="collapse show">
 
   
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Id</th>
+      <th scope="col">Hotel</th>
+      <th scope="col">Habitacion</th>
+      <th scope="col">Ciudad</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Seleccionar</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let item of hotels; let i = index">
+      <th scope="row">{{i + 1}}</th>
+      <td>{{ item.providerRoomCodeNumber}}</td>
+      <td>{{ item.hotelName}}</td>
+      <td>{{ item.roomDescription}}</td>
+      <td>${{ item.city }}</td>
+      <td>{{ item.amount }}</td>
+      <td style="text-align: center;">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      </td>
+    </tr>
+  </tbody>
 </div>
+</table>
+
+<hr>
+
+<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+  <i class="fa fa-plane" aria-hidden="true"></i>
+  Transporte
+</button>
+<table class="table table-striped" >
+  <div  id="collapseTwo" class="collapse show">
+
+  
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Transporte</th>
+      <th scope="col">Terminal Original</th>
+      <th scope="col">Terminal Destino</th>
+      <th scope="col">Escalas</th>
+      <th scope="col">Tiempo de viaje</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Seleccionar</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let item of transports; let i = index">
+      <th scope="row">{{i + 1}}</th>
+      <td>{{ item.providerTransportCodeNumber}}</td>
+      <td>{{ item.originTerminalName}}</td>
+      <td>{{ item.destinationTerminalName}}</td>
+      <td>${{ item.transportScale }}</td>
+      <td>{{ item.durationString }}</td>
+      <td>{{ item.amount }}</td>
+      <td style="text-align: center;">
+        <input type="checkbox" class="form-check-input" id="exampleCheck2">
+      </td>
+    </tr>
+  </tbody>
+</div>
+</table>

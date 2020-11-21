@@ -30,7 +30,7 @@ const routes: Routes = [
   { path: 'productsoms', component: ProductOmsComponent,canActivate: [ AuthGuard ], data:{id:4}  },
   { path: 'productRegistro', component: RegistroProductsComponent,canActivate: [ AuthGuard ], data:{id:5}  },
   { path: 'productEdit/:id', component: EditProductComponent,canActivate: [ AuthGuard ], data:{id:5}  },
-  { path: 'cartShop', component: CartShopComponent,canActivate: [ AuthGuard ], data:{id:5}  },
+  { path: 'cartShop', component: CartShopComponent,canActivate: [ AuthGuard ], data:{id:2}  },
   { path: '**', redirectTo: '/home' }
 ];
 

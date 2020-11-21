@@ -30,3 +30,19 @@ export class productCart{
     Amount:number;
     Cantidad:number;
 }
+
+export class Hotels{
+    guestNumber: number;
+    city:string;
+    chekInDay:string;
+    chekOutDay:string;
+}
+
+export class Transport{
+    transportType: string;
+    passengersNumber:number;
+    originCityDescription:string;
+    destinationCityDescription:string;
+    departureDate:string;
+    returnDate:string;
+}

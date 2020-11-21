@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { UsuarioModel } from '../models/usuario.model';
-import { catalogoModel,productModel } from '../models/catalogo.model';
+import { catalogoModel,productModel, Hotels, Transport } from '../models/catalogo.model';
 import { cotizacionModel, cotizaListModel, oferta } from '../models/cotizacion.model';
 import { map } from 'rxjs/operators';
 import { Key } from 'protractor';
@@ -333,10 +333,47 @@ export class AuthService {
         })
       );
     }
-  
-  
 
+    getHotels(): Observable<any>{
+      let hotels = new Hotels();
+      hotels.guestNumber = 1
+      hotels.city = "br"
+      hotels.chekInDay = "2020-11-15T01:45:57.936Z"
+      hotels.chekOutDay = "2020-11-15T01:45:57.936Z"
+      return this.http.post<any>(
+        `${ this.url }/Products/getHotels` , hotels
+      ). 
+      pipe(
+        map((data:any)=>
+    
+        data)
 
+        
+      );
+
+    }
+
+    getTransport(): Observable<any>{
+
+      let transport = new Transport();
+      transport.transportType = "A"
+      transport.passengersNumber = 1
+      transport.originCityDescription ="co"
+      transport.destinationCityDescription =  "br"
+      transport.departureDate = "2020-11-15T01:43:15.335Z"
+      transport.returnDate =  "2020-11-15T01:43:15.335Z"
+      return this.http.post<any>(
+        `${ this.url }/Products/getTransport` , transport
+      ). 
+      pipe(
+        map((data:any)=>
+    
+        data)
+
+      );
+
+    }
+ 
   }
 
 

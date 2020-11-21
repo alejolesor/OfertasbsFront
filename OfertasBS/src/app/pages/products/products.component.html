@@ -12,6 +12,20 @@
   </div>
 </div>
 
+<hr>
+
+<div >
+  <input class="form-control"
+         #box
+         name="buscar"
+         type="text" 
+         placeholder="Buscar"
+         (change)="buscarProduct(box.value)"  
+         >
+</div>
+
+<br>
+
 <div class="row">
   <div class="card-columns">
 

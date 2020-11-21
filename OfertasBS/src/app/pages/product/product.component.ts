@@ -13,6 +13,8 @@ export class ProductComponent implements OnInit {
   product: any;
   productPlane: any;
   productsCartTotal: productCart[] 
+  hotels: any[]
+  transports: any[]
 
   constructor( private auth: AuthService, private route: ActivatedRoute) {
     this.route.params.subscribe( parametros => {
@@ -26,6 +28,8 @@ export class ProductComponent implements OnInit {
   ngOnInit() {
 
     this.productsCartTotal = this.readProductCart();
+    this.getHotels();
+    this.getTransport();
 
   }
 
@@ -95,6 +99,26 @@ export class ProductComponent implements OnInit {
 
 
   }
+
+  getHotels(){
+
+    this.auth.getHotels().subscribe( res => {
+      
+      this.hotels = res[0].availableRoomItems;
+
+  });
+  }
+
+  getTransport(){
+
+    this.auth.getTransport().subscribe( res => {
+      console.log(res[0].departureItems)
+      this.transports = res[0].departureItems;
+
+  });
+
+  }
+
 
 
 }

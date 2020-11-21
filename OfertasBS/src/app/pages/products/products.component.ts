@@ -20,7 +20,7 @@ export class ProductsComponent implements OnInit {
     this.auth.getproductsPlanes().subscribe( res => {
 
       this.products = res
-      console.log(this.products)
+      //console.log(this.products)
 
     })
 
@@ -31,6 +31,10 @@ export class ProductsComponent implements OnInit {
 
   });
 
+  }
+
+  buscarProduct(product:string){
+    console.log(product)
   }
 
 }
